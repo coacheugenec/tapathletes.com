@@ -805,18 +805,6 @@
       </div>
     </section>
 
-    <!-- REACH OUT -->
-    <section class="py-16 lg:py-24 bg-cream" id="contact">
-      <div class="max-w-default mx-auto px-5 lg:px-12">
-        <div class="bg-white border border-cream-dark rounded-2xl p-8 lg:p-12 text-center flex flex-col items-center shadow-soft fade-up">
-          <p class="text-xs-r font-semibold uppercase tracking-[0.15em] text-forest mb-4">Reach Out</p>
-          <h2 class="font-display text-2xl-r text-ink leading-tight mb-4">Still have a question?</h2>
-          <p class="text-base-r text-ink-muted leading-relaxed mb-8 max-w-[48ch]">Tell us about your pitcher and what you're looking for. We'll get back to you &mdash; usually within a day.</p>
-          <button type="button" data-reachout-btn class="inline-flex items-center justify-center px-8 py-4 text-base-r font-semibold rounded-lg bg-forest text-white hover:bg-forest-light transition-all hover:-translate-y-px hover:shadow-medium">Send a Message</button>
-        </div>
-      </div>
-    </section>
-
     <!-- CLOSING CTA -->
     <section class="py-16 lg:py-24 bg-forest" id="closing">
       <div class="max-w-default mx-auto px-5 lg:px-12 text-center">
@@ -826,6 +814,7 @@
           <a href="#programs" class="inline-flex items-center justify-center px-8 py-4 text-base-r font-semibold rounded-lg bg-white text-forest hover:bg-cream transition-all hover:-translate-y-px hover:shadow-medium">Explore Programs</a>
           <a href="https://wix.app/mobile.apps/9UnuV7p?ref=mam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 text-base-r font-semibold rounded-lg bg-transparent text-white border border-white/30 hover:border-white/60 transition-all">Get the App</a>
         </div>
+        <p class="mt-6 text-sm-r text-white/55">Not ready to commit? <a href="sms:+18338602711?&body=Hi%20TAP%20Athletes!%20My%20name%20is%20___%20and%20I%20want%20to%20learn%20about%20___%20(program%20or%20training%20request)." class="text-white/85 font-medium underline underline-offset-4 decoration-white/30 hover:decoration-white/70 transition-colors">Text us a question &rarr;</a></p>
       </div>
     </section>
 
@@ -1030,123 +1019,6 @@
         }).catch(function() {
           errorMsg.classList.remove('hidden');
           submitBtn.textContent = 'Download';
-          submitBtn.disabled = false;
-        });
-      });
-    })();
-  </script>
-
-  <!-- Reach-Out Modal -->
-  <div id="reachoutModal" class="hidden fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm items-center justify-center p-4">
-    <div class="bg-white rounded-2xl p-8 max-w-[440px] w-full relative shadow-heavy max-h-[90vh] overflow-y-auto">
-      <button id="reachoutModalClose" type="button" class="absolute top-4 right-4 text-ink-muted hover:text-ink text-xl leading-none cursor-pointer" aria-label="Close">&times;</button>
-
-      <!-- Form view -->
-      <div id="reachoutFormView">
-        <h3 class="font-display text-xl-r italic text-ink mb-2">Send a message</h3>
-        <p class="text-sm-r text-ink-muted mb-5">Tell us a bit about your pitcher. We'll be in touch soon.</p>
-        <form id="reachoutForm" class="flex flex-col gap-3">
-          <div>
-            <label class="block text-xs-r font-semibold text-ink mb-1.5" for="ro-name">Name <span class="text-rust">*</span></label>
-            <input type="text" id="ro-name" name="name" required placeholder="Your name" class="w-full px-4 py-3 border border-cream-dark rounded-lg font-body text-sm-r outline-none focus:border-forest transition-colors" />
-          </div>
-          <div>
-            <label class="block text-xs-r font-semibold text-ink mb-1.5" for="ro-email">Email <span class="text-rust">*</span></label>
-            <input type="email" id="ro-email" name="email" required placeholder="your@email.com" class="w-full px-4 py-3 border border-cream-dark rounded-lg font-body text-sm-r outline-none focus:border-forest transition-colors" />
-          </div>
-          <div>
-            <label class="block text-xs-r font-semibold text-ink mb-1.5" for="ro-phone">Phone <span class="text-ink-faint font-normal normal-case tracking-normal">(optional)</span></label>
-            <input type="tel" id="ro-phone" name="phone" placeholder="(555) 555-5555" class="w-full px-4 py-3 border border-cream-dark rounded-lg font-body text-sm-r outline-none focus:border-forest transition-colors" />
-          </div>
-          <div>
-            <label class="block text-xs-r font-semibold text-ink mb-1.5" for="ro-message">Message <span class="text-ink-faint font-normal normal-case tracking-normal">(optional)</span></label>
-            <textarea id="ro-message" name="message" rows="3" placeholder="What are you looking for?" class="w-full px-4 py-3 border border-cream-dark rounded-lg font-body text-sm-r outline-none focus:border-forest transition-colors resize-y"></textarea>
-          </div>
-          <button type="submit" id="reachoutSubmitBtn" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-base-r font-semibold rounded-lg bg-forest text-white hover:bg-forest-light transition-colors mt-1">Send Message</button>
-          <p id="reachoutError" class="hidden text-xs-r text-red-600 text-center">Something went wrong. Please try again.</p>
-        </form>
-      </div>
-
-      <!-- Success view -->
-      <div id="reachoutSuccessView" class="hidden text-center">
-        <div class="w-12 h-12 rounded-full bg-forest-pale inline-flex items-center justify-center mb-4 mx-auto">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B3D2F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3 class="font-display text-xl-r italic text-ink mb-2">Thanks &mdash; we'll be in touch soon.</h3>
-        <p class="text-sm-r text-ink-muted mb-6">Usually within a day.</p>
-        <div class="bg-forest rounded-xl p-5 text-left">
-          <p class="text-xs-r font-semibold uppercase tracking-[0.15em] text-forest-pale/80 mb-2">While you wait &mdash; get the app</p>
-          <p class="text-sm-r text-white/80 leading-relaxed mb-4">Download Spaces by Wix and join with our invite code to book sessions and message coaches.</p>
-          <div class="flex flex-wrap items-center gap-3">
-            <div class="inline-flex items-baseline gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-lg">
-              <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-forest-pale/80">Invite</span>
-              <span class="font-body text-base-r font-bold tracking-[0.15em] text-white">VWMF1Y</span>
-            </div>
-            <a href="https://wix.app/mobile.apps/9UnuV7p?ref=mam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2.5 text-xs-r font-semibold rounded-lg bg-rust text-white hover:bg-rust-hover transition-colors whitespace-nowrap">Get the App</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function(){
-      var modal = document.getElementById('reachoutModal');
-      var form = document.getElementById('reachoutForm');
-      var closeBtn = document.getElementById('reachoutModalClose');
-      var submitBtn = document.getElementById('reachoutSubmitBtn');
-      var errorMsg = document.getElementById('reachoutError');
-      var formView = document.getElementById('reachoutFormView');
-      var successView = document.getElementById('reachoutSuccessView');
-      if (!modal || !form) return;
-
-      function openModal() {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        var firstInput = form.querySelector('input');
-        if (firstInput) firstInput.focus();
-      }
-      function closeModal() {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      }
-
-      document.querySelectorAll('[data-reachout-btn]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) { e.preventDefault(); openModal(); });
-      });
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-      });
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        errorMsg.classList.add('hidden');
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-
-        fetch('https://formspree.io/f/xkoagwej', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            name: form.querySelector('[name="name"]').value,
-            email: form.querySelector('[name="email"]').value,
-            phone: form.querySelector('[name="phone"]').value,
-            message: form.querySelector('[name="message"]').value,
-            _subject: 'Homepage Reach-Out'
-          })
-        }).then(function(r) {
-          if (r.ok) {
-            formView.classList.add('hidden');
-            successView.classList.remove('hidden');
-            form.reset();
-            submitBtn.textContent = 'Send Message';
-            submitBtn.disabled = false;
-          } else { throw new Error('fail'); }
-        }).catch(function() {
-          errorMsg.classList.remove('hidden');
-          submitBtn.textContent = 'Send Message';
           submitBtn.disabled = false;
         });
       });
