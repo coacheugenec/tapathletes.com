@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TAP Athletes — Logo</title>
+<style>
+  :root{ --ink:#1A1A1A; --cream:#FAF9F7; --rust:#C4501C; --forest:#1B3D2F; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#1A1A1A;background:#EDEBE6}
+  header{padding:48px 40px 36px;background:#FAF9F7;border-bottom:1px solid #E0DDD6}
+  h1{margin:0 0 6px;font-size:25px;letter-spacing:-.01em}
+  .sub{color:#6B6B6B;font-size:14px;max-width:64ch;line-height:1.55}
+  .wrap{max-width:1040px;margin:0 auto;padding:36px}
+  h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8a8780;margin:34px 0 12px;font-weight:700}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{border-radius:10px;overflow:hidden;border:1px solid #E0DDD6}
+  .stage{display:flex;align-items:center;justify-content:center;padding:34px;min-height:150px}
+  .stage img{max-width:100%}
+  .cap{font-size:12px;color:#6B6B6B;padding:10px 14px;border-top:1px solid #EDEBE6;font-family:ui-monospace,monospace;background:#fff}
+  .cream{background:#FAF9F7}.ink{background:#1A1A1A}
+  .favs{display:flex;align-items:center;gap:24px;background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:24px 30px;flex-wrap:wrap}
+  .favs img{display:block;border-radius:14%}
+  .sw{display:flex;gap:14px;flex-wrap:wrap}
+  .chip{width:150px;border:1px solid #E0DDD6;border-radius:8px;overflow:hidden;background:#fff}
+  .chip .c{height:60px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap" style="padding:0">
+    <h1>TAP Athletes — logo system</h1>
+    <p class="sub">The mark is a <strong>baseball seam</strong> — the stitches a pitcher grips — arcing over the wordmark. No diamond, no home plate. Bold condensed type (Barlow Condensed), all converted to vector outlines. Built on the live-site palette: ink on cream with one bold accent. Direction informed by the open-design / Nike "radical simplicity — monochrome + single accent" approach.</p>
+  </div>
+</header>
+<div class="wrap">
+
+  <h2>Primary — stacked (accent: rust)</h2>
+  <div class="grid2">
+    <div class="card"><div class="stage cream"><img src="tap-logo-stacked.svg" style="width:280px"></div><div class="cap">tap-logo-stacked.svg</div></div>
+    <div class="card"><div class="stage ink"><img src="tap-logo-stacked-reverse.svg" style="width:280px"></div><div class="cap">tap-logo-stacked-reverse.svg</div></div>
+  </div>
+
+  <h2>Horizontal</h2>
+  <div class="grid2">
+    <div class="card"><div class="stage cream"><img src="tap-logo-horizontal.svg" style="width:360px"></div><div class="cap">tap-logo-horizontal.svg</div></div>
+    <div class="card"><div class="stage ink"><img src="tap-logo-horizontal-reverse.svg" style="width:360px"></div><div class="cap">tap-logo-horizontal-reverse.svg</div></div>
+  </div>
+
+  <h2>Alternate accent — forest green</h2>
+  <div class="grid2">
+    <div class="card"><div class="stage cream"><img src="tap-logo-stacked-forest.svg" style="width:280px"></div><div class="cap">tap-logo-stacked-forest.svg</div></div>
+    <div class="card"><div class="stage cream"><img src="tap-logo-horizontal-forest.svg" style="width:360px"></div><div class="cap">tap-logo-horizontal-forest.svg</div></div>
+  </div>
+
+  <h2>Seam mark · app icon · favicons</h2>
+  <div class="favs">
+    <img src="tap-seam.svg" width="150" style="border-radius:0">
+    <img src="tap-app-icon.svg" width="84">
+    <img src="icon-512.png" width="60">
+    <img src="icon-96.png" width="40">
+    <img src="icon-32.png" width="32">
+  </div>
+
+  <h2>Palette</h2>
+  <div class="sw">
+    <div class="chip"><div class="c" style="background:#1A1A1A"></div><div class="cap">Ink #1A1A1A</div></div>
+    <div class="chip"><div class="c" style="background:#FAF9F7;border-bottom:1px solid #eee"></div><div class="cap">Cream #FAF9F7</div></div>
+    <div class="chip"><div class="c" style="background:#C4501C"></div><div class="cap">Rust #C4501C</div></div>
+    <div class="chip"><div class="c" style="background:#1B3D2F"></div><div class="cap">Forest #1B3D2F</div></div>
+  </div>
+
+</div>
+</body>
+</html>
