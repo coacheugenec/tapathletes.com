@@ -8,9 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <style>
   :root {
     --forest: #1B3D2F;
@@ -813,9 +810,6 @@
     text-transform: uppercase;
   }
 
-  #tweaks-root { position: fixed; inset: 0; pointer-events: none; z-index: 2147483646; }
-  #tweaks-root > * { pointer-events: auto; }
-
   @media (max-width: 900px) {
     .doc { padding: 16px 0 48px; }
     .page { padding: 32px 24px; min-height: auto; margin-bottom: 16px; }
@@ -1569,115 +1563,6 @@
   </section>
 
 </div>
-
-<div id="tweaks-root"></div>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel">
-  const { useState, useEffect } = React;
-
-  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "coverTopPad": 36,
-    "coverTitlePadTop": 0,
-    "coverTitlePadBottom": 140,
-    "coverTitleSize": 92,
-    "displayHueRust": "#C4501C",
-    "forestColor": "#1B3D2F",
-    "creamBg": "#F8F8F6",
-    "pageGap": 28,
-    "pageHorizPad": 88,
-    "showSeal": true,
-    "showAbstract": true,
-    "showRule": true
-  }/*EDITMODE-END*/;
-
-  function applyTweaks(t) {
-    const r = document.documentElement.style;
-    r.setProperty('--rust', t.displayHueRust);
-    r.setProperty('--forest', t.forestColor);
-    r.setProperty('--cream', t.creamBg);
-
-    // Cover-specific overrides via data attribute
-    document.body.dataset.coverTopPad = t.coverTopPad;
-    document.body.dataset.coverTitlePadTop = t.coverTitlePadTop;
-    document.body.dataset.coverTitlePadBottom = t.coverTitlePadBottom;
-
-    const cover = document.querySelector('.cover');
-    if (cover) cover.style.padding = `${t.coverTopPad}px ${t.pageHorizPad}px 56px`;
-
-    const coverTitle = document.querySelector('.cover-title');
-    if (coverTitle) coverTitle.style.padding = '0';
-
-    const h1 = document.querySelector('.cover-title h1');
-    if (h1) h1.style.fontSize = t.coverTitleSize + 'px';
-
-    document.querySelectorAll('.page').forEach(p => {
-      p.style.marginBottom = t.pageGap + 'px';
-      if (!p.classList.contains('cover')) {
-        p.style.paddingLeft = t.pageHorizPad + 'px';
-        p.style.paddingRight = t.pageHorizPad + 'px';
-      }
-    });
-
-    const seal = document.querySelector('.seal');
-    if (seal) seal.style.display = t.showSeal ? 'grid' : 'none';
-
-    const abs = document.querySelector('.cover-abstract');
-    if (abs) abs.style.display = t.showAbstract ? 'block' : 'none';
-
-    const rule = document.querySelector('.cover');
-    if (rule) rule.classList.toggle('no-rule', !t.showRule);
-  }
-
-  // Hide the top rule when toggled off
-  const styleEl = document.createElement('style');
-  styleEl.textContent = `.cover.no-rule::before { display: none; }`;
-  document.head.appendChild(styleEl);
-
-  function App() {
-    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-
-    useEffect(() => { applyTweaks(t); }, [t]);
-
-    return (
-      <TweaksPanel title="Tweaks">
-        <TweakSection label="Cover Spacing" />
-        <TweakSlider label="Top padding" value={t.coverTopPad} min={0} max={120} unit="px"
-                     onChange={(v) => setTweak('coverTopPad', v)} />
-        <TweakSlider label="Title space above" value={t.coverTitlePadTop} min={0} max={140} unit="px"
-                     onChange={(v) => setTweak('coverTitlePadTop', v)} />
-        <TweakSlider label="Title space below" value={t.coverTitlePadBottom} min={0} max={140} unit="px"
-                     onChange={(v) => setTweak('coverTitlePadBottom', v)} />
-        <TweakSlider label="Headline size" value={t.coverTitleSize} min={60} max={120} unit="px"
-                     onChange={(v) => setTweak('coverTitleSize', v)} />
-
-        <TweakSection label="Cover Elements" />
-        <TweakToggle label="Show abstract" value={t.showAbstract}
-                     onChange={(v) => setTweak('showAbstract', v)} />
-        <TweakToggle label="Show seal" value={t.showSeal}
-                     onChange={(v) => setTweak('showSeal', v)} />
-        <TweakToggle label="Show top rule" value={t.showRule}
-                     onChange={(v) => setTweak('showRule', v)} />
-
-        <TweakSection label="Palette" />
-        <TweakColor label="Accent (rust)" value={t.displayHueRust}
-                    onChange={(v) => setTweak('displayHueRust', v)} />
-        <TweakColor label="Primary (forest)" value={t.forestColor}
-                    onChange={(v) => setTweak('forestColor', v)} />
-        <TweakColor label="Background" value={t.creamBg}
-                    onChange={(v) => setTweak('creamBg', v)} />
-
-        <TweakSection label="Layout" />
-        <TweakSlider label="Page gap" value={t.pageGap} min={0} max={80} unit="px"
-                     onChange={(v) => setTweak('pageGap', v)} />
-        <TweakSlider label="Page side padding" value={t.pageHorizPad} min={48} max={120} unit="px"
-                     onChange={(v) => setTweak('pageHorizPad', v)} />
-      </TweaksPanel>
-    );
-  }
-
-  // Apply non-tweak page-side-padding live to all pages
-  ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<App />);
-</script>
 
 </body>
 </html>
