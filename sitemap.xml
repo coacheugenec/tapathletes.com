@@ -19,7 +19,7 @@
 
   <!-- Foundations — progression-based pitching program, ages 8+ -->
   <url>
-    <loc>https://tapathletes.com/foundations</loc>
+    <loc>https://tapathletes.com/foundations/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -27,7 +27,7 @@
 
   <!-- Pitching Accelerator — 6-month semi-private cohort, 14U+ -->
   <url>
-    <loc>https://tapathletes.com/pitching-accelerator</loc>
+    <loc>https://tapathletes.com/pitching-accelerator/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -35,7 +35,7 @@
 
   <!-- Train Unprompted — behavior-first 6-week cohort, ages 13+ -->
   <url>
-    <loc>https://tapathletes.com/train-unprompted</loc>
+    <loc>https://tapathletes.com/train-unprompted/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -44,7 +44,7 @@
   <!-- Foundations curriculum — public documentation of phases, effort bands,
        the 18-skill matrix, and assessment/placement/advancement -->
   <url>
-    <loc>https://tapathletes.com/foundations/curriculum</loc>
+    <loc>https://tapathletes.com/foundations/curriculum/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
