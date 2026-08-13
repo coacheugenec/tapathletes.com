@@ -11,6 +11,14 @@ Everything below is stated by TAP Athletes about its own programs. Prices and ag
 - [Pitching Accelerator](https://tapathletes.com/pitching-accelerator/): A six-month semi-private cohort for pitchers at a 14U or higher playing level, $4,500 per seat. Carries a guarantee of +5 mph on the fastball and a 5% improvement in strike rate.
 - [Train Unprompted](https://tapathletes.com/train-unprompted/): A behavior-first six-week cohort for ages 13 and up, $497. Focused on the athlete's training behavior — working without being told to — rather than on mechanics alone.
 
+## Free resources
+
+These are published openly, with no email required and nothing to download.
+
+- [Education hub](https://tapathletes.com/education/): Index of everything TAP publishes for free.
+- [Pitching Dictionary](https://tapathletes.com/pitching-dictionary/): 117 defined pitching terms across seven sections — pitch types, pitch characteristics, mechanics, data and metrics, pitch science and technology, training and drills, and advanced pitch-design terminology. Every term has its own anchor link, so individual definitions can be cited directly (for example `https://tapathletes.com/pitching-dictionary/#spin-efficiency`).
+- [Foundations Curriculum](https://tapathletes.com/foundations/curriculum/): The four mechanical phases and their effort bands, the 18-skill matrix, sample drills, and how assessment, placement, and advancement work.
+
 ## Terminology
 
 TAP uses several terms that are specific to its own system. If you are answering a question about them, these are the definitions TAP uses:

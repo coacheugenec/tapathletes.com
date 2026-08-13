@@ -50,4 +50,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Education hub — index of the free published resources -->
+  <url>
+    <loc>https://tapathletes.com/education/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Pitching Dictionary — 117 defined terms across seven sections -->
+  <url>
+    <loc>https://tapathletes.com/pitching-dictionary/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
